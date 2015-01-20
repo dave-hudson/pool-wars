@@ -27,6 +27,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+ * calculate1()
+ *	Generate simulation results for a "hash switching" attack.
+ */
 void calculate1(double pool1, double pool2, bool pool1_attack, bool pool2_attack, double dilution)
 {
 	char filename[128];
@@ -102,6 +106,10 @@ void calculate1(double pool1, double pool2, bool pool1_attack, bool pool2_attack
 	fclose(f);
 }
 
+/*
+ * calculate2()
+ *	Generate simulation results for a "new stealth hashing" attack.
+ */
 void calculate2(double pool1, double pool2, bool pool1_attack, bool pool2_attack, double dilution)
 {
 	char filename[128];
@@ -176,6 +184,9 @@ void calculate2(double pool1, double pool2, bool pool1_attack, bool pool2_attack
 
 int main(int argc, char **argv)
 {
+	/*
+	 * Generate outputs for a series of different mining pool attack scenarios.
+	 */
 	calculate1(0.25, 0.25, true, false, 1.0);
 	calculate1(0.25, 0.25, true, false, 0.75);
 	calculate1(0.25, 0.25, false, true, 1.0);
